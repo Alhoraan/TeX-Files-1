@@ -1,2 +1,0 @@
-# MyStuff
-Some things.
