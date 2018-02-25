@@ -1,0 +1,101 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Esto es una definición para hacer que las "|" en las matrices se vean mejores 
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%Estos son los comandos para escribir un teorema o una definición, respectivamente 
+
+\newtheorem{mydef}{Teorema}
+\newtheorem*{mydef2}{Definición}
+\newtheorem*{mydef3}{Proposición}
+
+%Autor, título, fecha (usar \maketitle donde lo quieras)
+\title{Series de potencias}
+\author{Jhonny Lanzuisi}
+\date{21 de Febrero de 2018}
+
+\begin{document}
+\maketitle
+
+\begin{mydef3}
+	Si \( P_n(x) \) es el polinomio de Taylor de grado n para f alrededor de \(x_0\) entonces, \(P_n(x)^{(k)} = f^{(k)}\) (las derivadas k-ésimas son iguales) y \(P_n(x)\) es el único polinomio de grado n con esta propiedad.
+\end{mydef3}
+
+Para la prueba hace falta ver que la condición de igualdad de las derivadas se satisface directamente de la definición del polinomio de Taylor. Luego, para la unicidad, hay que suponer que existo otro polinomio \textit{q} de grado \textit{n} que cumple las mismas propiedades y darse cuenta que necesariamente \(P_n = q\).
+
+En el siguiente teorema se darán dos formulas para el resto, distintas de la forma integral dada anteriormente.
+
+\begin{mydef}
+	Supongamos que \( f,f',...,f^{(n+1)} \) están todas definidas en (a,b).Y sean \( x,x_0 \in (a,b) \) con \(x \neq x_0 \). Si
+		\begin{equation}
+		P_n(u) = \sum_{k=1}^{\infty} \frac{f^{(k)}(x_0)}{k!} (u-x_0)^k
+		\end{equation}
+	es el polinomio de Taylor de grado n para f alrededor de \(x_0\) y \( f(u) = P_n(u) + R_n(u) \rightarrow R_n(u) = f(u) - P_n(u) \) entonces:
+	\begin{eqnarray}
+	(a) & \, R_n(x) &= \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0)^n+1 \\
+	(b) & \, R_n(x) &= \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-\xi)^n (x-x_0)
+	\end{eqnarray}
+\end{mydef}
+
+Las formulas para el n-ésimo resto \(R_n\) (que define el error al aproximar \textit{f(x)} por \(P_n(x)\)) dadas en \textit{(a)} y \textit{(b)} se conocen por la \textbf{forma de Lagrange} y la \textbf{forma de Cauchy}, respectivamente.
+
+Observemos que para \(x,x_0 \in (a.b) \) fijos y \(x \neq x_0\) la forma de Lagrange (o la de Cauchy) para el n-ésimo resto \(R_n\) permite estimar el grado de polinomio de Taylor para \textit{f} alrededor de \(x_0\), \(P_n\), para que se \(R_n(x) < \epsilon \) con \( \epsilon > 0 \) dado siempre que \textit{f} posea derivadas de orden superior y en la medida que dispongamos de información sobre el comportamiento de las mismas. 
+
+\textbf{\textit{Ejemplo:}}
+
+Sean \(f(x) = sen(x)\). Observemos que \(f'(x) = cos(x)\) y \(f''(x) = -sen(x)\), de modo que:
+	\begin{align*}
+	f^{(2k+1)}(x) &= (-1)^k cos(x) \, y \\
+	f^{(2k)}(x) &= (-1)^k sen(x)
+	\end{align*}
+para \(k = 0,1,...,n\) y \(x \in \mathbb{R}\), en particular 
+	\begin{equation*}
+	f^{(2k+1)}(0) = (-1)^k \quad \text{y} \quad f^{(2k)}(0) = 0 
+	\end{equation*}
+
+Por lo tanto  \(P_n(x) = P_{n,f,0}(x)\) es el polinomio de Taylor para \(f(x) = sen(x)\) alrededor de \(x_0 = 0\), entonces
+
+	\begin{align*}
+	P_{2m+1}(x) &= \sum_{k=0}^{m} \frac{(-1)^k}{(2k+1)!} x^{2k+1} \quad \text{y} \\
+	P_{2m}(x) &= \sum_{k=0}^{m-1} \frac{(-1)^k}{(2k+1)!} x^{2k+1} = P_{2n-1}
+	\end{align*}
+	
+Así, por ejemplo:
+
+	\begin{align*}
+	P_1(x) &= x &= P_2(x) \\
+	P_3(x) &= x - \frac{x^3}{x!} &= P_4(x) \\
+	P_5(x) &= x - \frac{x^3}{x!} + \frac{x^5}{5!} &= P_6(x) \\
+	P_7(x) &= x - \frac{x^3}{x!} + \frac{x^5}{5!} - \frac{x^7}{7!} &= P_8(x)
+	\end{align*}
+	
+Tenemos entonces que el 
+	\begin{equation}
+	sen(x) = x - \frac{x^3}{x!} + \frac{x^5}{5!} + \dots = \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!} x^{2k+1}
+	\end{equation}
+
+Supongamos que queremos ahora aproximar el \(sen (\frac{1}{2})\) con dos decimales exactos, buscamos un \textit{n} tal que \(|R_n(\frac{1}{2})| < 10^{-2}\). De acuerdo con la formula de Lagrange para \(R_n(\frac{1}{2})\) tenemos:
+	\begin{equation*}
+	\left|R_n(\frac{1}{2})\right| = \frac{\left|f^{(n+1)}(\xi)\right|}{(n+1)!} \left(\frac{1}{2}\right)^n
+	\end{equation*}
+para algún \(0<\xi< \frac{1}{2}\). Buscamos un \textit{n} tal que sea 
+	\begin{equation*}
+	\frac{1}{(n+1)!2^n} < \frac{1}{10^2} \rightarrow (n+1)!2^n > 10^2
+	\end{equation*}  
+entonces vamos probando \textit{n} hasta que se cumpla la desigualdad. Para \(n=3\), \((3+1)!2^3 = 192 > 100 = 10^2\), lo que indica que \(P_3(\frac{1}{2})\) es una aproximación de \(sen(\frac{1}{2})\) con dos decimales exactos:
+	\begin{equation*}
+	P_3(\frac{1}{2}) = \frac{1}{2} - \left( \frac{1}{6} \right) \left( \frac{1}{8} \right) = \frac{23}{48} \approx 0,47
+	\end{equation*}
+\end{document}
