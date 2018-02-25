@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames,pdf]{pstricks}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig} 
+\usepackage[depth=subsection]{bookmark}
+
+%Autor, título, fecha (usar \maketitle donde lo quieras)
+\title{Tarea 2}
+\author{Jhonny Lanzuisi, 1510759}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Ejercicios del capitulo 3: Triángulos}
+	
+		\subsection{Muestre que una recta que no pasa por ninguno de los vértices de un triángulo, pero que corta a uno de sus lados, necesariamente corta otro de los lados del triángulo.}
+		
+			\begin{wrapfigure}[9]{l}{0.35\textwidth}
+				\begin{center}
+					\includegraphics[width=0.35\textwidth]{ejercicio7}
+				\end{center}
+			\end{wrapfigure}
+			
+		Sean \textit{A}, \textit{B} y \textit{C} tres puntos no colineales, consideremos el triangulo \( \triangle ABC \). Llamemos a las rectas \(AB = a\), \(BC = b\), \(AC = c\). Y sean \( \alpha _1, \alpha _2, \alpha _3 \) los semiplanos determinados por \( a,b,c \) respectivamente.
+		
+		Para fijar ideas, tomemos una recta \textit{r} secante a \textit{AB}. Hay entonces dos posibilidades: o \textit{r} esta en \( \alpha _1 \, y \, \alpha _3 \), o \textit{r} esta en \( \alpha _1 \, y \, \alpha _2 \).
+		
+		Si \textit{r} esta en \( \alpha _1 \, y \, \alpha _3 \), entonces por como se definieron los semiplanos \textit{r} debe de cortar a \textit{CA} en algún punto.
+		
+		Si \textit{r} esta en \( \alpha _1 \, y \, \alpha _2 \), entonces por como se definieron los semiplanos \textit{r} debe de cortar a \textit{BC} en algún punto.
+		
+		Nótese que un argumento homologo al anterior se pudo haber usado si se tomaba \textit{r} secante a cualquiera de los otros dos lados.
+		
+		Así, la recta \textit{r} necesariamente corta a dos lados del triangulo.
+		
+		\subsection{Muestre que las bisectrices de dos ángulos adyacentes, determinados por dos rectas secantes, son perpendiculares.}
+		
+			\begin{wrapfigure}[11]{r}{0.35\textwidth}
+				\begin{center}
+					\includegraphics[width=0.35\textwidth]{ejercicio8}
+				\end{center}
+			\end{wrapfigure}
+		Sean \textit{a} y \textit{b} dos rectas secantes en \textit{O}. Sean \(B \in b \) y \( A \in a \), llamemos \textit{c} a la bisectriz de \( \angle AOB\). Sea \(A'\) la imagen de \textit{A} por la simetría central en \textit{O} y llamemos \textit{d} a la bisectriz del angulo \( \angle A'OB\).
+		
+		Queremos probar que \textit{d} es perpendicular a \textit{c}. Esto ultimo es equivalente a probar que \textit{d} es invariante por la simetría axial en \textit{c}, llamemos a esta simetría \textit{T}. Queremos ver entonces que \(T(d) = d\). Como \textit{T} preserva los ángulos \(T(d)\) es necesariamente bisectriz del angulo \( \angle A'OB \), ya que \(T(a)=b\). Supongamos que \(T(d) = d' \neq d \), luego \(O \in d' \) ya que \(O \in d \) y \textit{O} es invariante por \textit{T}. Si tomamos un punto \textit{D} equidistante de \textit{a} y \textit{b}, entonces \(D \in d \) por ser bisectriz y \(D \in d' \) por la misma razón. Luego \textit{d} y \(d'\) poseen dos puntos en común (\textit{O} y \textit{D}) y por lo tanto son iguales. Entonces \(T(d) = d\) y \textit{c}, \textit{d} son perpendiculares.
+\end{document}
