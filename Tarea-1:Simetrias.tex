@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames,pdf]{pstricks}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig} 
+\usepackage[depth=subsection]{bookmark}
+
+%Autor, título, fecha (usar \maketitle donde lo quieras)
+\title{Tarea 1}
+\author{Jhonny Lanzuisi, 1510759}
+\date{Jueves 8 de febrero, 2018}
+
+\begin{document}
+	\maketitle
+	\section*{Ejercicios del capitulo 2: simetrías}
+	\subsection{Construir la perpendicular a una recta que pasa por un punto \textit{P} exterior a dicha recta:} 
+	
+	\begin{wrapfigure}[10]{r}{0.35\textwidth}
+		\begin{center}
+			\includegraphics[width=0.35\textwidth]{ejercicio1}
+		\end{center}
+	\end{wrapfigure}
+
+
+Sea \textit{r} una recta y \(P\) un punto exterior a ella. Consideremos la simetría axial cuyo eje es \textit{r}, por medio de la cual el punto \(P\) posee un simétrico \(P'\). Consideremos ahora la recta \(PP'\), como esta simetría es una involución \(P = T(P') = T \circ T(P) \), esta recta es invariante.
+
+Pero tomando en cuenta que las únicas rectas invariantes por la simetría son las perpendiculares a \textit{r} y el propio eje de simetría \textit{r}, y que al ser \(P\) exterior a \textit{r} la recta \(PP'\) es distinta de \textit{r}, tenemos que \(PP'\) debe ser perpendicular a \textit{r}.
+
+
+
+\subsection{Muestre que dos rectas perpendiculares a una tercera, son paralelas:}
+
+	\begin{wrapfigure}[11]{l}{0.35\textwidth}
+		\begin{center}
+			\includegraphics[width=0.35\textwidth]{ejercicio2}
+		\end{center}
+	\end{wrapfigure}
+
+Sean \textit{r} y \textit{r}\('\) dos rectas tales que son perpendiculares a una tercera recta, \textit{s}. Nótese que si \(r=r'\) entonces son paralelas entre si y a su vez perpendiculares (por hipótesis) a \textit{s}.
+
+Veamos ahora que ocurre cuando son distintas. Supongamos que \textit{r} y \textit{r}\('\) son secantes en un punto \textit{C}, tendríamos entonces dos rectas perpendiculares a \textit{s} (por hipótesis) que pasan por \textit{C}. Pero esto no puede ser, ya que dado un punto exterior a \textit{s} solo existe una recta perpendicular que pasa por el.
+
+Así, \textit{r} y \textit{r}\('\) no se cortan en ningún punto, es decir, son paralelas.
+
+\vspace{1em}
+
+\subsection{Sean \textit{a} y \textit{b} dos rectas perpendiculares. Construir la bisectriz de uno de los ángulos determinados por estas rectas:}
+
+\begin{wrapfigure}[8]{r}{0.35\textwidth}
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{ejercicio3}
+	\end{center}
+\end{wrapfigure}
+
+Consideremos la recta \textit{t} y tomemos una simetría axial con \textit{t} como eje. Consideremos ahora una recta \textit{a} no invariante y no paralela a \textit{t}, tal que \textit{a} es perpendicular a su homólogo por la simetría(podemos pedir esto ya que por el ejercicio 0.1 siempre existe una perpendicular a una recta), y llamemos a su homólogo \textit{b}. Es claro que \textit{a} corta a \textit{t} en el mismo punto que \textit{b}. 
+
+Tenemos entonces que, por la construcción realizada, \textit{a} y \textit{b} son perpendiculares y ademas el eje de simetría \textit{t} bisecta el angulo recto formado por \textit{a} y \textit{b}.
+
+
+\subsection{Sean \textit{a} y \textit{b} dos rectas paralelas y \textit{c} una recta secante a \textit{a}. Sean \(T_1\) y \(T_2\) las simetrias axiales con respecto a \textit{a} y \textit{b} y \(T=T_2 \circ T_1\). Determine \(T(c)\):}
+
+\begin{wrapfigure}[9]{l}{0.35\textwidth}
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{ejercicio5}
+	\end{center}
+\end{wrapfigure}
+
+Veamos primero que \(T(c)\) es una recta. Como la composición de movimientos del plano es otro movimiento, y la imagen de una recta por un movimiento es otra recta, tenemos que la imagen de \textit{c} por \(T\) es una recta.
+
+Consideremos primero el caso en el que \textit{c} es perpendicular a \textit{a}. Por el ejercicio 0.2 \textit{c} es perpendicular también a \textit{b} y es entonces invariante por \(T_1\) y por \(T_2\), esto es, \underline{\(T(c) = T_2 \circ T_1 (c) = T_2(T_1(c)) = T_2(c) = c \)}.
+
+Veamos ahora el caso en el que \textit{c} no es perpendicular a \textit{a}, es decir, \textit{c} es secante a \textit{a} en un punto \textit{A}. Queremos ver que \textit{c} es secante también a \textit{b} en un punto \textit{B}. Para esto ultimo, veamos primero que el paralelismo es una relación transitiva:
+
+Supongamos que \( a \parallel b \) y \(b \parallel d \). Tomemos un punto \(A'' \in a \) y un punto \(D \in d \) y consideremos el punto medio del segmento \(A''D\), \textit{O}, y la simetría central en ese punto, \(T_3\). Como \(D \neq O \), \textit{D} no es invariante por \(T_3\) y \(T_3(d) = a\), ya que \(T_3(D) = A''\) por como se construyó la simetría. Así la imagen de \textit{d}, que es \textit{a}, no pasa por el eje de simetría y \(a \parallel d\).
+
+Ya que tenemos la transitividad veamos que \textit{c} corta a  \textit{b} por reducción al absurdo: Supongamos que \textit{c} no corta a \textit{b} en ningún punto, es decir, \textit{c} es paralela a \textit{b}, pero por transitividad esto haría que \textit{c} fuese paralela a \textit{a} lo que contradice la hipótesis de que \textit{c} es secante a \textit{a}. Por lo tanto, \textit{c} debe de ser secante a \textit{b} en un punto \textit{B}.
+
+Con todo lo dicho anteriormente podemos ya hallar \(T(c)\). Llamemos a \(T_1(c) = c'\), es claro que \(c'\) corta a \textit{a} en un punto \textit{A} y a \textit{b} en un punto \(B'\), luego, \(T_2(c') = c''\) corta a \textit{B} en \(B'\) y a \textit{A} en un punto \(A'\neq A\).
+
+ \underline{Tenemos entonces que \(T(c) = T_2 \circ T_1(c) = T_2(T_1(c)) = T_2(c') = c'' = A'B'\).}
+ 
+ \subsection{Demostrar que el producto de dos simetrías respecto de dos ejes perpendiculares es la simetría central con respecto del punto de intersección:}
+ 
+ Sean \textit{a} y \textit{b} dos rectas perpendiculares y sean \(T_1\) y \(T_2\) las simetrías axiales en \textit{a} y \textit{b} respectivamente. Sea \textit{O} el punto de intersección de las dos rectas y \(T_3\) la simetría central en \textit{O}.
+ 
+  \begin{wrapfigure}[9]{r}{0.35\textwidth}
+ 	\begin{center}
+ 		\includegraphics[width=0.35\textwidth]{ejercicio6}
+ 	\end{center}
+ \end{wrapfigure}
+
+Veamos primero que \textit{a} y \textit{b} son invariantes tanto por \(T_1\) y \(T_2\) como por \(T_3\):
+
+Como \textit{a} y \textit{b} pasan por el eje de simetría de \(T_3\) se tiene que: 
+\[T_3 (a) = a \quad \text{y} \quad T_3 (b) = b \]
+Como \textit{a} es invariante por \(T_1\) y, dado que es perpendicular a b, por \(T_2\), tenemos que:
+\begin{align*}
+T_1 \circ T_2 (a) = T_1(T_2(a)) = T_1(a) = a \\ T_2 \circ T_1 (a) = T_2(T_1(a)) = T_2(a) = a
+\end{align*}
+
+\vspace{0.5em}
+
+Así, tenemos que \( T_3 (a) = T_1 \circ T_2(a) = T_2 \circ T_1(a) \). Como \textit{b} es invariante por \(T_2\) y, por ser perpendicular a \textit{a}, es invariante por \(T_1\), es claro que se puede hacer un argumento homologo para llegar a que la composición de las simetrías es igual a la simetría central para el caso de \textit{b}.
+
+Por ultimo falta ver que ocurre con una recta \textit{c} que corte a \textit{a} y \textit{b} en \textit{O}. Como \textit{c} pasa por \textit{O} se tiene que \textit{c} es invariante por \(T_3\). Tomemos un punto \( A \in b \) y un punto \( C \in c \) y llamemos a \(T_1 \circ T_2 \), \textit{T}. Queremos ver que \(T(c) = c\):
+
+Supongamos que \(T(c) = c' \neq c \). Nótese que el angulo \( \sphericalangle AOC \) es congruente con el angulo \( \sphericalangle A'OC' \), donde \(A'\) y \(C'\) son los homólogos de \textit{A} y \textit{C} por \(T_3\). Como \(T(c) \neq c\) el angulo \( \sphericalangle AOC \) se estaría enviando en un angulo \( \sphericalangle A'OC'' \) con \(C''\) un punto de \(c'\), lo cual contradice el axioma de rigidez ya que \( \sphericalangle A'OC'' \) es necesariamente una parte o mas que el original. Así \(T(c)\) tiene que ser \textit{c}.
+
+Como en el argumento anterior no se uso el orden en el cual se efectuaron las simetrías \(T_1\) y \(T_2\), es claro que un argumento idéntico se puede usar para \(T = T_2 \circ T_1 \). Se concluye entonces que:
+\[ T_3 (c) = T_1 \circ T_2 (c) = T_2 \circ T_1 (c) = c \]
+Por ultimo, con los dos casos ya probados (la invariancia de \textit{a},\textit{b} y \textit{c}) se concluye que la composición de las simetrías es igual a la simetría central para todo punto del plano.
+
+\subsection{Demostrar que el producto de una simetría central por otra axial con respecto de un eje que pasa por el centro, es la simetría axial respecto del eje perpendicular por dicho centro:}
+
+Sean \(T_1\) y \(T_2\) las simetrías axiales con respecto a los dos ejes perpendiculares, y sea \(T_3\) la simetría central. Queremos ver que: 
+\begin{equation}
+T_3 \circ T_1  = T_2
+\end{equation}
+por el ejercicio 0.5 sabemos que la simetría central es la composición de las axiales, esto es, \(T_3 = T_2 \circ T_1\). Sustituyendo esto en 1 tenemos que:
+
+\[T_2 \circ T_1 \circ T_1 = T_2(T_1(T_1)) = T_2(I) = T_2\]
+
+Y esto es lo que queríamos probar.
+
+\subsection{Construir la perpendicular a una recta que pasa por un punto P de dicha recta}
+
+Sea \textit{r} una recta y \textit{P} un punto en \textit{r}. Consideremos los dos puntos \textit{A}, \(A'\)  en \textit{r} tales que los segmentos \(PA\) y \(PA'\) son opuestos. Por la construccion realizada la mediatriz del segmento \(AA'\) pasa por \textit{P}. Pero sabemos que la mediatriz es el eje de la simetria axial que transforma \(PA\) en \(PA'\), esto es, 
+\[ T(PA) = PA'\quad y \quad T(PA') = PA \]
+donde T es la simetria. Se deduce de esto ultimo que la recta \textit{r} es invariante por T, y esto es lo mismo que decir que \textit{r} es perpendicular a la mediatriz. 
+
+Tenemos entonces la mediatriz del segmento \(AA'\) es una recta perpendicular a \textit{r} que pasa por \textit{P}, que era la recta que estabamos buscando.
+\end{document}
